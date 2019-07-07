@@ -19,3 +19,11 @@
 ## Libros
 
 - [High Performance Browser Networking](https://hpbn.co/)
+
+## Referentes
+
+- [Patrick Debois](https://twitter.com/patrickdebois)
+- [Gene Kim](https://twitter.com/RealGeneKim)
+- [John Willis](https://twitter.com/botchagalupe)
+
+- 
