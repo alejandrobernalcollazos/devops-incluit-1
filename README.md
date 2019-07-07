@@ -6,3 +6,4 @@
 - [A Netflix Guide to Microservices](https://www.youtube.com/watch?v=CZ3wIuvmHeM&t=7s)
 - [Cloudflare Issue](https://blog.cloudflare.com/cloudflare-outage/)
 - [The DevOps Transformation](https://www.youtube.com/watch?v=3KpPBnEtRj4&t=4228s)
+- [High Performance Browser Networking](https://hpbn.co/)
