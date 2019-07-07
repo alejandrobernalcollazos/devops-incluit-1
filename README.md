@@ -20,10 +20,12 @@
 
 - [High Performance Browser Networking](https://hpbn.co/)
 
+## Scrum
+
+- [What is Scrum](https://www.atlassian.com/agile/scrum)
+
 ## Referentes
 
 - [Patrick Debois](https://twitter.com/patrickdebois)
 - [Gene Kim](https://twitter.com/RealGeneKim)
 - [John Willis](https://twitter.com/botchagalupe)
-
-- 
