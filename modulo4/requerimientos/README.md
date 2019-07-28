@@ -153,13 +153,14 @@ Las configuraciones iniciales contienen las fuentes a ser usadas
 
 #### Criterio de aceptación 4
 El archivo style.css contiene las siguientes especificaciones
-Margin: 0;
-Padding: 0;
-Box-sizing: border-box;
-Background-color: #fff;
-Color: #555;
-Font-family: ‘Lato’, ‘Arial’, sans-serif;
-Font-weight: 300;
-Font-size: 20px;
-Text-rendering: optimizeLegibility;
+
+- Margin: 0;
+- Padding: 0;
+- Box-sizing: border-box;
+- Background-color: #fff;
+- Color: #555;
+- Font-family: ‘Lato’, ‘Arial’, sans-serif;
+- Font-weight: 300;
+- Font-size: 20px;
+- Text-rendering: optimizeLegibility;
 
