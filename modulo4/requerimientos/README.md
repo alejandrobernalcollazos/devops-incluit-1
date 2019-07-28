@@ -9,46 +9,47 @@ Tipos de Layouts
 - Mobile landscape 568 x 812 px
 - Mobile portrait 320 x 414 px
 
-### 1.0 COMO un integrante del equipo de desarrollo QUIERO tener la posibilidad de ver un wiremock del Curriculum Vitae PARA ver los sectores de la página y entender la disposición del contenido
+### 1 COMO un integrante del equipo de desarrollo QUIERO tener la posibilidad de ver un wiremock del Curriculum Vitae PARA ver los sectores de la página y entender la disposición del contenido
 
 Tipos de Layouts
 Estos están descritos en la EPICA 
 
-Criterio de aceptación 1
+#### Criterio de aceptación 1
 La sección “Header” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-Criterio de aceptación 2
+#### Criterio de aceptación 2
 La sección “Valores” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-Criterio de aceptación 3
+#### Criterio de aceptación 3
 La sección “Imágenes” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-Criterio de aceptación 4
+#### Criterio de aceptación 4
 La sección “Experiencia” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-Criterio de aceptación 5
+#### Criterio de aceptación 5
 La sección “Testimonios” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-Criterio de aceptación 6
+#### Criterio de aceptación 6
 La sección “Contactos” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-Criterio de aceptación 7
+#### Criterio de aceptación 7
 La sección “Footer” se ve en detalle (en cuanto a posición, estructura y contenido) en un dibujo claro para todos los tipos de layouts
 
-2.1 Header
-COMO una persona
-PUEDO ver en cualquier dispositivo, la sección principal del Curriculum Vitae
-PARA leer y visualizar todos sus componentes
+### 2 COMO una persona PUEDO ver en cualquier dispositivo, la sección principal del Curriculum Vitae PARA leer y visualizar todos sus componentes
 
 Tipos de Layouts
-Estos están descritos en la EPICA 
-Criterio de aceptación 1
+Estos están descritos en la EPICA
+
+#### Criterio de aceptación 1
 El título de la página se ve claramente en todos los tipos de layouts
-Criterio de aceptación 2
+
+#### Criterio de aceptación 2
 La lista con links a las diferentes secciones se ve claramente en todos los tipos de layouts
-Criterio de aceptación 3
+
+#### Criterio de aceptación 3
 El motto se ve claramente en todos los tipos de layouts
-Criterio de aceptación 4
+
+#### Criterio de aceptación 4
 La imagen principal se ve claramente en todos los tipos de layouts
 
 
