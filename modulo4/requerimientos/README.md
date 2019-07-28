@@ -140,6 +140,9 @@ La frase de derecho reservados sobre la página web se ven claramente en todos l
 #### Criterio de aceptación 1
 El repositorio donde vamos a almacenar el código del FrontEnd es accesible
 
+#### Criterio de aceptación 2
+El repositorio debe contener los branches :  master y develop, ambos vacios
+
 ### 10 COMO miembro del equipo de desarrollo PUEDO tener acceso al archivo index.html con las configuraciones iniciales PARA empezar a trabajar en nuevos requerimientos
 
 #### Criterio de aceptación 1
