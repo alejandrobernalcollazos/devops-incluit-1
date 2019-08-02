@@ -9,7 +9,7 @@ COMO miembro del equipo de desarrollo PUEDO tener acceso al archivo index.html c
 Ejemplo
 
 ```
-git branch -b ALE-14
+git checkout -b ALE-14
 ```
 
 ## 3. Crear el archivo index.html dentro del feature branch
