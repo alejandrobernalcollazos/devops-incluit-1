@@ -39,10 +39,14 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 apt-get install nodejs
 ```
 
-## 5. Crear el usuario "desarrollo"
+## 5. Crear el usuario "desarrollo" e impersonarme con el usuario desarrollo
 
 ```
 adduser desarrollo
+```
+Impersonarme como el usuario desarrollo
+```
+sudo su desarrollo
 ```
 
 ## 6. Ir al home del usuario desarrollo
