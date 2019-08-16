@@ -9,7 +9,7 @@
 ## 2. Conectarse a una maquina remota
 
 ```
-ssh root@<ip de la maquina>
+ssh -i <path a la llave privada> root@<ip de la maquina>
 ```
 
 ## 3. Actualizar los paquetes del sistema operativo
