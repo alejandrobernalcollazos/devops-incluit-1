@@ -23,17 +23,21 @@ Puedes hacer esto con tu editor de texto favorito
 
 Con los siguientes tags de html
 
+Puedes tomar este [archivo](https://github.com/alejandrobernalcollazos/abernal/blob/develop/index.html) como ejemplo
+
 - DOCKTYPE
 - html
 - header
+  - meta
+    - [viewport meta tag](https://github.com/alejandrobernalcollazos/abernal/blob/develop/index.html)
   - links
     - [normalize.css](https://github.com/alejandrobernalcollazos/abernal/tree/develop/vendor/css)
     - [grid.css](https://github.com/alejandrobernalcollazos/abernal/tree/develop/vendor/css)
     - font "usa la fuente Lato desde [google fonts](https://fonts.google.com/)"
+    - [icons](https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css)
     - [style.css](https://github.com/alejandrobernalcollazos/abernal/tree/develop/resources/css)
+    - [queries.css](https://github.com/alejandrobernalcollazos/abernal/blob/develop/index.html)
 - body
-
-Puedes tomar este [archivo](https://github.com/alejandrobernalcollazos/abernal/blob/develop/index.html) como ejemplo
 
 ### 1.5 Crear la carpeta vendor y dentro la carpeta css
 
