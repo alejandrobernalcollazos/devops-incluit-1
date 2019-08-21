@@ -232,3 +232,174 @@ p {
 }
 ```
             
+### 2.4 Agregar el siguiente codigo dentro del archivo queries.css
+
+Este archivo debe estar en el siguiente path
+
+- resources/css/queries.css
+
+```
+
+/* --------------------------------*/
+/* TABLETS LANDSCAPE */
+/* --------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+
+    /* --------------------------------*/
+    /* General */
+    /* --------------------------------*/
+    
+    body { font-size: 18px; }
+
+    .icon-big {
+        font-size: 300%;
+    }
+
+    /* --------------------------------*/
+    /* Principal section */
+    /* --------------------------------*/
+
+    .title { 
+        display: block; 
+        margin-left: 20px;
+    }
+
+    .main-nav { 
+        float: left; 
+        margin-left: 20px;
+    }
+
+    .motto { margin-left: 20px; }   
+
+    .motto h2 { font-size: 1.3em; }
+
+    .principal-image { 
+        height: 65vh;
+        width: 65vh;
+        margin-top: 5%;
+    }  
+
+}
+
+/* --------------------------------*/
+/* TABLETS PORTRAIT */
+/* --------------------------------*/
+
+@media only screen and (max-width: 768px) {
+
+    /* --------------------------------*/
+    /* General */
+    /* --------------------------------*/
+    
+    body { font-size: 16px; }
+
+    .icon-big { font-size: 400%; }
+
+    /* --------------------------------*/
+    /* Principal section */
+    /* --------------------------------*/
+
+    .title { 
+        display: block; 
+        margin-left: 10px;
+    }
+
+    .main-nav { 
+        float: left; 
+        margin-left: 10px;
+    }
+
+    .motto { display: none;  }   
+
+    .motto-cell-phone {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    .motto-cell-phone h2 {
+        font-size: 1.5em;
+        font-weight: 100;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    .principal-image { 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        height: 60vh;
+        width: 60vh;
+        float: unset;
+    }  
+
+}
+
+/* --------------------------------*/
+/* CELL PHONES */
+/* --------------------------------*/
+
+@media only screen and (max-width: 568px) {
+
+    /* --------------------------------*/
+    /* General */
+    /* --------------------------------*/
+    
+    body { font-size: 14px; }
+
+    /* --------------------------------*/
+    /* Principal section */
+    /* --------------------------------*/
+
+    .title { 
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-align: center;
+    }
+
+    .main-nav { 
+        display: block; 
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        text-align: center;
+        float: unset;
+    }
+
+    .main-nav li { margin-right: 20px; }
+
+    .motto { display: none; }   
+
+    .motto-cell-phone {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
+
+    .motto-cell-phone h2 {
+        font-size: 1.5em;
+        font-weight: 100;
+        margin-top: 6%;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    .principal-image { 
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        height: 60vh;
+        width: 60vh;
+        float: unset;
+    }  
+
+}
+```
