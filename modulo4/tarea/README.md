@@ -933,7 +933,7 @@ git commit -m "ALE-18 COMO una persona PUEDO ver en cualquier dispositivo la sec
 Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
 
 ```
-git push --set-upstream origin ALE-17
+git push --set-upstream origin ALE-18
 ```
 
 ### 5.8 Crear un pull request y compartirlo con el instructor de la clase
@@ -1037,7 +1037,7 @@ git add .
 Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
 
 ```
-git commit -m "ALE-18 COMO una persona PUEDO ver en cualquier dispositivo la sección “Testimonios” del Curriculum Vitae PARA leerlas"
+git commit -m "ALE-19 COMO una persona PUEDO ver en cualquier dispositivo la sección “Testimonios” del Curriculum Vitae PARA leerlas"
 ```
 
 ### 6.6 Hacer push del branch al repositorio remoto
@@ -1045,7 +1045,7 @@ git commit -m "ALE-18 COMO una persona PUEDO ver en cualquier dispositivo la sec
 Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
 
 ```
-git push --set-upstream origin ALE-18
+git push --set-upstream origin ALE-19
 ```
 
 ### 6.7 Crear un pull request y compartirlo con el instructor de la clase
@@ -1057,3 +1057,257 @@ El pull request debemos hacerlo desde el feature branch al branch de integració
 ### 6.9 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
 
 ### 6.10 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
+
+## 7 COMO una persona PUEDO ver en cualquier dispositivo la sección “Contacto” del Curriculum Vitae PARA leerlos
+
+### 7.1 Crear el feature branch
+
+```
+git checkout -b ALE-20
+```
+
+### 7.2 Modificar el archivo index.html
+
+Agregar el siguiente contenido
+
+```
+<section class="contact">
+    <div class="row">
+        <div class="contact-title">
+            <h2>Contacto</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-mail icon-big"></i>
+            <center><h3>alejandro@alejandro.bio</h3></center>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-call icon-big"></i>
+            <center><h3>+54 9 351 2732 983</h3></center>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-pin icon-big"></i>
+            <center><h3>Av Velez Sarfield 576, Piso 4</h3></center>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-browsers icon-big"></i>
+            <center><h3>www.alejandro.bio</h3></center>
+        </div>
+    </div>
+</section>
+```
+
+### 7.3 Modificar el archivo style.css
+
+Agregar el siguiente contenido
+
+```
+.
+.
+.
+/* --------------------------------*/
+/* CONTACT SECTION */
+/* --------------------------------*/
+
+.contact-title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.contact-title h2 {
+    font-size: 2em;
+    text-align: center;
+}
+.
+.
+.
+```
+
+### 7.4 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 7.5 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-20 COMO una persona PUEDO ver en cualquier dispositivo la sección “Testimonios” del Curriculum Vitae PARA leerlas"
+```
+
+### 7.6 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-20
+```
+
+### 7.7 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 7.8 Hacer un merge del pull request
+
+### 7.9 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+
+### 7.10 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
+
+## 8 COMO una persona PUEDO ver en cualquier dispositivo la sección “Footer” del Curriculum Vitae PARA leer y visualizar sus componentes
+
+### 8.1 Crear el feature branch
+
+```
+git checkout -b ALE-21
+```
+
+### 8.2 Modificar el archivo index.html
+
+Agregar el siguiente contenido al archivo
+
+```
+.
+.
+.
+<section class="footer">
+    <div class="row">
+        <ul class="footer-main-nav">
+            <li><a href="#">Valores</a></li>
+            <li><a href="#">Experiencia</a></li>
+            <li><a href="#">Testimonios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+        <a href="#"><i class="icon ion-logo-facebook footer-icon"></i></a>
+        <a href="#"><i class="icon ion-logo-instagram footer-icon"></i></a>
+    </div>
+    <div class="row">
+        <p class="rights">Copyright © 2019 by Alejandro. All rights reserved</p>
+    </div>
+</section>
+```
+
+### 8.3 Modificar el archivo style.css
+
+Agregar el siguiente contenido
+
+```
+.
+.
+.
+/* --------------------------------*/
+/* FOOTER SECTION */
+/* --------------------------------*/
+
+.footer {
+    background-color: #393939;
+}
+
+.footer-main-nav {
+    float: left;
+    list-style: none;
+    margin-top: 5%;
+    margin-left: 10px;
+    
+}
+
+.footer-main-nav li {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+.footer-main-nav li a:link,
+.footer-main-nav li a:visited {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 1em;
+}
+
+.footer-icon {
+    font-size: 300%;
+    display: inline-block;
+    color: #000;
+    margin-top: 2.5%;
+    margin-bottom: 10px;
+    margin-right: 10%;
+    text-align: center;
+    float: right;
+}
+
+.rights {
+    color: #fff;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    margin-bottom: 3%;
+}
+```
+
+### 8.4 Modificar el archivo queries.css
+
+Agregar el siguiente contenido
+
+```
+@media only screen and (max-width: 1024px) {
+.
+.
+.
+    /* --------------------------------*/
+    /* Footer section */
+    /* --------------------------------*/
+
+    .footer-main-nav {
+        display: none;
+    }
+
+    .footer-icon {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 400%;
+    }
+.
+.
+.
+}
+```
+
+### 8.5 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 8.6 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-21 COMO una persona PUEDO ver en cualquier dispositivo la sección “Footer” del Curriculum Vitae PARA leer y visualizar sus componentes"
+```
+
+### 8.7 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-21
+```
+
+### 8.8 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 8.9 Hacer un merge del pull request
+
+### 8.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+
+### 8.11 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
