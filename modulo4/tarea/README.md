@@ -53,6 +53,35 @@ Puedes tomar de referencia esta estructura de [archivos](https://github.com/alej
 
 Puedes tomar de referencia esta estructura de [archivos](https://github.com/alejandrobernalcollazos/abernal/tree/develop)
 
+### 1.8 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 1.9 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket ALE-14 es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-14 COMO miembro del equipo de desarrollo PUEDO tener acceso al archivo index.html con las configuraciones iniciales PARA empezar a trabajar en nuevos requerimientos"
+```
+
+### 1.10 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket ALE-14 es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-14
+```
+
+### 1.11 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 1.12 Hacer un merge del pull request
+
+### 1.13 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
 
 ## 2 COMO una persona PUEDO ver en cualquier dispositivo, la sección principal del Curriculum Vitae PARA leer y visualizar todos sus componentes
 
@@ -403,3 +432,32 @@ Este archivo debe estar en el siguiente path
 
 }
 ```
+### 2.5 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 2.6 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-15 COMO una persona PUEDO ver en cualquier dispositivo, la sección principal del Curriculum Vitae PARA leer y visualizar todos sus componentes"
+```
+
+### 2.7 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-15
+```
+
+### 2.8 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 2.9 Hacer un merge del pull request
+
+### 2.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
