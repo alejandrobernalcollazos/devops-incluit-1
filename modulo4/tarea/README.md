@@ -946,3 +946,114 @@ El pull request debemos hacerlo desde el feature branch al branch de integració
 
 ### 5.11 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
 
+
+## 6 COMO una persona PUEDO ver en cualquier dispositivo la sección “Testimonios” del Curriculum Vitae PARA leerlos
+
+### 6.1 Crear un feature branch con el número de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git checkout -b ALE-19
+```
+
+### 6.2 Modificar el archivo index.html
+
+Agregar el siguiente contenido al archivo
+
+```
+<section class="testimony">
+    <div class="row">
+        <div class="testimony-title">
+            <h2>Testimonios</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-4 box">
+            <center><h3>Andres</h3></center>
+            <center><h3>Openhaimer</h3></center>
+            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <center><h3>Sandra</h3></center>
+            <center><h3>Bullock</h3></center>
+            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <center><h3>Corinne</h3></center>
+            <center><h3>Onessians</h3></center>
+            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <center><h3>Karen</h3></center>
+            <center><h3>Palma</h3></center>
+            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+    </div>
+</section>
+```
+
+### 6.3 Modificar el archivo style.css
+
+Agregar el siguiente contenido al archivo
+
+```
+.
+.
+.
+/* --------------------------------*/
+/* TESTIMONIES SECTION */
+/* --------------------------------*/
+
+.testimony {
+    background-color: #f4f4f4;
+}
+
+.testimony-title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.testimony-title h2 {
+    font-size: 2em;
+    text-align: center;
+}
+.
+.
+.
+```
+
+### 6.4 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 6.5 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-18 COMO una persona PUEDO ver en cualquier dispositivo la sección “Testimonios” del Curriculum Vitae PARA leerlas"
+```
+
+### 6.6 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-18
+```
+
+### 6.7 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 6.8 Hacer un merge del pull request
+
+### 6.9 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+
+### 6.10 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
