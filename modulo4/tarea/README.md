@@ -462,6 +462,9 @@ El pull request debemos hacerlo desde el feature branch al branch de integració
 
 ### 2.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
 
+### 2.11 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
+
+
 ## 3 COMO una persona PUEDO ver en cualquier dispositivo la sección “Valores” del Curriculum Vitae PARA leer cada uno de ellos y su descripción
 
 ### 3.1 Crear un feature branch con el nombre de la subtask, desde el branch de integración
@@ -617,3 +620,155 @@ El pull request debemos hacerlo desde el feature branch al branch de integració
 ### 3.9 Hacer un merge del pull request
 
 ### 3.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+
+### 3.11 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
+
+
+## 4 COMO una persona PUEDO ver en cualquier dispositivo la sección “Imágenes” del Curriculum Vitae PARA visualizar claramente las imágenes
+
+### 4.1 Crear el feature branch correspondiente
+
+```
+git checkout -b ALE-17
+```
+
+### 4.2 Agregar el siguiente código al archivo index.html
+
+Este código va después de la sección de valores
+
+```
+<section class="images">
+    <ul class="images-gallery clearfix">
+        <li>
+            <figure class="photo">
+                <img src="resources/img/alejandro_image_1_gallery_withe_background.jpg" alt="Alejandro Bernal Collazos">
+            </figure>
+        </li>
+        <li>
+            <figure class="photo">
+                <img src="resources/img/alejandro_image_2_gallery_withe_background.jpg" alt="Alejandro Bernal Collazos">
+            </figure>
+        </li>
+    </ul>
+</section>
+```
+
+### 4.3 Agregar las imagenes en el file system
+
+- Sacar las imagenes de este [repositorio](https://github.com/alejandrobernalcollazos/abernal/tree/develop/resources/img)
+- Guardarlas en el siguiente path 
+
+```
+resources/img/
+```
+
+### 4.4 Modificar el archivo style.css
+
+Agregar el siguiente código
+
+```
+/* --------------------------------*/
+/* IMAGES SECTION */
+/* --------------------------------*/
+
+.images {
+
+}
+
+.images-gallery {
+    list-style: none;
+    width: 100%;
+}
+
+.images-gallery li {
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.photo {
+    width: 100%;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.20);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.photo img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.clearfix { zoom: 1 }
+
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+```
+
+### 4.5 Modificar el archivo queries.css
+
+Agregar el siguiente contenido
+
+```
+.
+.
+.
+@media only screen and (max-width: 568px) {
+.
+.
+.
+    /* --------------------------------*/
+    /* Images section */
+    /* --------------------------------*/
+
+    .images-gallery li {
+        width: 100%;
+    }
+.
+.
+.
+}
+```
+
+### 4.6 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 4.7 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-17 COMO una persona PUEDO ver en cualquier dispositivo la sección “Imágenes” del Curriculum Vitae PARA visualizar claramente las imágenes"
+```
+
+### 4.8 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-17
+```
+
+### 4.9 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 4.10 Hacer un merge del pull request
+
+### 4.11 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+
+### 4.12 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
