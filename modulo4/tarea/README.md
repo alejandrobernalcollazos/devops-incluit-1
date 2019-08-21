@@ -461,3 +461,159 @@ El pull request debemos hacerlo desde el feature branch al branch de integració
 ### 2.9 Hacer un merge del pull request
 
 ### 2.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+
+## 3 COMO una persona PUEDO ver en cualquier dispositivo la sección “Valores” del Curriculum Vitae PARA leer cada uno de ellos y su descripción
+
+### 3.1 Crear un feature branch con el nombre de la subtask, desde el branch de integración
+
+Ejemplo
+
+```
+git checkout -b ALE-16
+```
+
+### 3.2 Modificar el archivo index.html
+
+Agregar el siguiente codigo, después del tag header
+
+```
+<section class="values">
+    <div class="row">
+        <div class="values-title">
+            <h2>Valores</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-heart icon-big"></i>
+            <center><h3>Pasion</h3></center>
+            <p class="text">Para mi la vida es un evento asombroso, si me pongo a pensar en todo lo necesario para que sea posible</p>
+            <br/>
+            <p class="text">Por eso trato de vivir con pasión cada momento y cada actividad que desarrollo, desde caminar hasta desarrollar un sistema de información</p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-star icon-big"></i>
+            <center><h3>Honestidad</h3></center>
+            <p class="text">Desde mi perspectiva la comunicación eficiente es un requisito para el exito de cualquier proyecto, tanto personal como profesional </p>
+            <br/>
+            <p class="text">Para que dicha comunicación sea posible, de mi parte trato de ser lo más honesto posible</p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-alarm icon-big"></i>
+            <center><h3>Respeto</h3></center>
+            <p class="text">Este valor es fundamental, respeto primero por mi mismo, por todos los humanos y la naturaleza</p>
+            <br/>
+            <p class="text">Respeto para mi es tener en cuenta y valorar, las necesidades, opiniones y diferencias de los seres vivos incluyendo a la naturaleza </p>
+        </div>
+        <div class="col span-1-of-4 box">
+            <i class="icon ion-md-hand icon-big"></i>
+            <center><h3>Tolerancia</h3></center>
+            <p class="text">Si bien no me es fácil tolerar comportamientos no respetuosos, considero que es importante detenerse y observar antes de juzgar</p>
+            <br/>
+            <p class="text">Luego se vuelve evidente el porque nosotros en determinadas situaciones hacemos lo que hacemos </p>
+        </div>
+    </div>
+</section>
+```
+
+### 3.3 Modificar el archivo style.css
+
+Agregar el siguiente contenido al archivo
+
+```
+/* --------------------------------*/
+/* VALUES SECTION */
+/* --------------------------------*/
+
+.values {
+    background-color: #f4f4f4;
+}
+
+.values-title {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.values-title h2 {
+    font-size: 2em;
+    text-align: center;
+}
+```
+
+### 3.4 Modificar el archivo queries.css
+
+Agregar el siguiente contenido al archivo
+
+```
+@media only screen and (max-width: 1024px) {
+.
+.
+.
+
+    /* --------------------------------*/
+    /* Values section */
+    /* --------------------------------*/
+
+    .box {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 270px;
+        padding: 4%;
+    }
+.
+.
+.
+}
+
+@media only screen and (max-width: 568px) {
+.
+.
+.
+    /* --------------------------------*/
+    /* Values section */
+    /* --------------------------------*/
+
+    .box {
+        width: 100%;
+        padding: 4%;
+        height: auto;
+    }
+.
+.
+.
+}
+```
+
+### 3.5 Agregar los cambios al repositorio
+
+```
+git add .
+```
+
+### 3.6 Hacer commit de los cambios con la descripción de la user story
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git commit -m "ALE-16 COMO una persona PUEDO ver en cualquier dispositivo la sección “Valores” del Curriculum Vitae PARA leer cada uno de ellos y su descripción"
+```
+
+### 3.7 Hacer push del branch al repositorio remoto
+
+Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
+
+```
+git push --set-upstream origin ALE-16
+```
+
+### 3.8 Crear un pull request y compartirlo con el instructor de la clase
+
+El pull request debemos hacerlo desde el feature branch al branch de integración
+
+### 3.9 Hacer un merge del pull request
+
+### 3.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
