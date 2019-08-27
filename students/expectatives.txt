@@ -1,0 +1,171 @@
+Diego Molina
+
+	IBM
+	Integrador 
+
+	Expectativas
+		Metodologias
+		Herramientas
+
+Ernesto
+
+	Estudiante de Ing
+
+	Expectativa
+		Aprender
+
+Angeles
+
+	Computación
+
+	Expectativa
+		Aprender nuevas cosas
+
+Ashley
+
+	Famaf computación : Colación
+
+	Expectativa
+		Aprender 
+
+Cristian
+
+	Ilumno
+		Epics
+
+	Expectativa
+		Tener conocimientos necesarios para el desarrollo
+
+Andres
+
+	22 años : DevOps : Telecom
+
+	Expectativas
+		Aprender
+
+Cristian 
+
+	Admin de Red de Ministerio de Educación
+
+	Expectativas
+		Aprender 
+
+Pablo
+
+	Freelance
+
+	Expectativas
+		Aprender
+
+Laura
+
+	Ciencias de la computación : Famaf
+
+Noelia
+
+	Ing sistemas en la UTN
+
+	Expectativas
+		Aprender 
+
+Patricio
+
+	25 años, estudiante de la UTN , 2 3 4
+	Desarrollador : SimTlix
+
+	Expectativas
+		Conocer que es DevOps
+
+Juanma
+
+	Ing Sistemas : 4 5 UTN
+	SimTlix
+
+	Expectativas
+		Entender el maps
+
+Cristian
+
+	34 artes, diseño industrial, diseño Grafico, UX
+	Python, Ruby, Java
+
+	Expectativa
+		Aprender a fondo
+
+Rocio Amaranto
+
+	26 años, Ing Sistemas, UTN
+	Madre
+
+	Expectativa
+		Aprender mas sobre el desarrollo de software
+
+Juan 
+
+	23 años, ing mecanica, Ing sistemas
+
+	Expectativa
+		Aprender esta metodologia de desarrollo de software
+
+Emma
+	
+	34, Uni Rio Cuarto, Trabajando con Andres
+
+	Expectativas
+		6 - 7 años : Aprender nuevas herramientas y metodologias de trabajo
+
+Francisco
+
+	28, trabajando harriague, sistemas
+
+	Expectativas
+		Desarrollo de software
+		EDS
+		Donde investigar, como investigar, donde buscar
+
+Damian
+	
+	36 años, Telecomunicaciones de Rio Cuarto
+	10 años en trabajo con sistemas, Linux, telefonia IP
+	Cognitive, inteligencia Artificial a Naranja, migraciones
+
+	Incluit IT
+
+	Expectativas
+		Aprender herramientas
+
+Lucas
+
+	37 años, Famaf 2005, Javier Blanco
+	15 años trabajando con IT, programador de gennexus
+	EDS : HP : HP Enterprise : DXC : ITO para American Airlines : Bluemix IBM 
+	Amazon Certified
+
+	Incluit hace 2 semanas, migracion en Naranja
+
+	Expectativas
+		Hacer un pipeline, como hacerlo desde cero
+
+
+**************
+
+DevOps
+
+Que es:
+
+
+	que no falle
+	que cumpla con los objetivos funcionales y no funcionales
+	eficiente efectivo eficaz 
+
+
+**************
+
+To do!
+
+Make a list with people that will attend the course
+Download material from Damian
+
+
+
+
