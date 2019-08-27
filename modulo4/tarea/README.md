@@ -169,7 +169,7 @@ h1 {
 }
 
 h2 {
-    font-weight: 400;
+    font-weight: 300;
 }
 
 h3 {
@@ -181,7 +181,7 @@ h4 {
 }
 
 .icon-big {
-    font-size: 200%;
+    font-size: 300%;
     display: block;
     color: #000;
     margin-bottom: 10px;
@@ -195,6 +195,10 @@ p {
 .box {
     padding: 1%;
     margin-bottom: 5%;
+}
+
+.center {
+    text-align: center;
 }
 
 /* --------------------------------*/
@@ -255,8 +259,8 @@ p {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    height: 65vh;
-    width: 65vh;
+    height: 60vh;
+    width: 60vh;
     float: right;
 }
 ```
@@ -304,8 +308,8 @@ Este archivo debe estar en el siguiente path
     .motto h2 { font-size: 1.3em; }
 
     .principal-image { 
-        height: 65vh;
-        width: 65vh;
+        height: 45vh;
+        width: 45vh;
         margin-top: 5%;
     }  
 
@@ -364,7 +368,7 @@ Este archivo debe estar en el siguiente path
         height: 60vh;
         width: 60vh;
         float: unset;
-    }  
+    }    
 
 }
 
@@ -425,8 +429,8 @@ Este archivo debe estar en el siguiente path
         margin-left: auto;
         margin-right: auto;
         margin-top: 5%;
-        height: 60vh;
-        width: 60vh;
+        height: 40vh;
+        width: 40vh;
         float: unset;
     }  
 
@@ -796,66 +800,18 @@ Agregar el siguiente contenido
     </div>
     <div class="row">
         <div class="col span-1-of-2 experience-box">
-            <center><h3>Consultor</h3></center>
-            <center><h4>Enero 2019 - Actualidad</h4></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <br/>
-            <i class="icon ion-md-refresh icon-big"></i>
-        </div>
-        <div class="col span-1-of-2 experience-box">
-            <center><h3>Grenzebach</h3></center>
-            <center><h4>Febrero 2018 - Diciembre 2018</h4></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <br/>
-            <i class="icon ion-md-cog icon-big"></i>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col span-1-of-2 experience-box">
-            <center><h3>Ilumno</h3></center>
-            <center><h4>Junio 2017 - Febrero 2018</h4></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <br/>
-            <i class="icon ion-md-school icon-big"></i>
-        </div>
-        <div class="col span-1-of-2 experience-box">
-            <center><h3>McAfee</h3></center>
-            <center><h4>Enero 2017 - Junio 2018</h4></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <br/>
-            <i class="icon ion-md-bug icon-big"></i>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col span-1-of-2 experience-box">
-            <center><h3>AppDirect</h3></center>
-            <center><h4>Mayo 2016 - Enero 2017</h4></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <br/>
-            <i class="icon ion-md-cart icon-big"></i>
-        </div>
-        <div class="col span-1-of-2 experience-box">
             <center><h3>Latam</h3></center>
             <center><h4>Enero 2014 - Junio 2016</h4></center>
             <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             <br/>
             <i class="icon ion-md-airplane icon-big"></i>
         </div>
-    </div>
-    <div class="row">
         <div class="col span-1-of-2 experience-box">
             <center><h3>American Airlines</h3></center>
             <center><h4>Enero 2012 - Enero 2014</h4></center>
             <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
             <br/>
             <i class="icon ion-md-airplane icon-big"></i>
-        </div>
-        <div class="col span-1-of-2 experience-box">
-            <center><h3>Link 3</h3></center>
-            <center><h4>Enero 2010 - Enero 2012</h4></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-            <br/>
-            <i class="icon ion-md-photos icon-big"></i>
         </div>
     </div>
 </section>
@@ -970,24 +926,32 @@ Agregar el siguiente contenido al archivo
     </div>
     <div class="row">
         <div class="col span-1-of-4 box">
-            <center><h3>Andres</h3></center>
-            <center><h3>Openhaimer</h3></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <blockquote>
+                simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                <cite><img src="resources/img/testimony-1.jpg">Andres Openhaimer</cite>
+            </blockquote>
         </div>
         <div class="col span-1-of-4 box">
-            <center><h3>Sandra</h3></center>
-            <center><h3>Bullock</h3></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <blockquote>
+                simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                <cite><img src="resources/img/testimony-2.jpg">Sandra Bullock</cite>
+            </blockquote>
         </div>
         <div class="col span-1-of-4 box">
-            <center><h3>Corinne</h3></center>
-            <center><h3>Onessians</h3></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <blockquote>
+                simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                <cite><img src="resources/img/testimony-3.jpg">Oscar Miretti</cite>
+            </blockquote>
         </div>
         <div class="col span-1-of-4 box">
-            <center><h3>Karen</h3></center>
-            <center><h3>Palma</h3></center>
-            <p class="text">simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <blockquote>
+                simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                <cite><img src="resources/img/testimony-4.jpg">Karen Palma</cite>
+            </blockquote>
         </div>
     </div>
 </section>
@@ -1006,7 +970,14 @@ Agregar el siguiente contenido al archivo
 /* --------------------------------*/
 
 .testimony {
-    background-color: #f4f4f4;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(img/office-background.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+.testimony h2 {
+    color: #fff;
 }
 
 .testimony-title {
@@ -1021,18 +992,67 @@ Agregar el siguiente contenido al archivo
     font-size: 2em;
     text-align: center;
 }
+
+blockquote:before {
+    content: "\201C";
+    font-size: 400%;
+}
+
+blockquote {
+    font-style: italic;
+    line-height: 145%;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img {
+    height: 60px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+}
 .
 .
 .
 ```
 
-### 6.4 Agregar los cambios al repositorio
+### 6.4 Modificar el archivo queries.css
+
+Agregar el siguiente código al archivo
+
+```
+.
+.
+.
+@media only screen and (max-width: 568px) {
+.
+.
+.
+    /* --------------------------------*/
+    /* Testimony section */
+    /* --------------------------------*/
+
+    blockquote {
+        text-align: center;
+    }
+
+    cite {
+        text-align: center;
+    }
+}
+```
+
+### 6.5 Agregar los cambios al repositorio
 
 ```
 git add .
 ```
 
-### 6.5 Hacer commit de los cambios con la descripción de la user story
+### 6.6 Hacer commit de los cambios con la descripción de la user story
 
 Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
 
@@ -1040,7 +1060,7 @@ Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número 
 git commit -m "ALE-19 COMO una persona PUEDO ver en cualquier dispositivo la sección “Testimonios” del Curriculum Vitae PARA leerlas"
 ```
 
-### 6.6 Hacer push del branch al repositorio remoto
+### 6.7 Hacer push del branch al repositorio remoto
 
 Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número de ticket correspondiente
 
@@ -1048,15 +1068,15 @@ Tener en cuenta que el ticket usado es solo de ejemplo, debemos usar el número 
 git push --set-upstream origin ALE-19
 ```
 
-### 6.7 Crear un pull request y compartirlo con el instructor de la clase
+### 6.8 Crear un pull request y compartirlo con el instructor de la clase
 
 El pull request debemos hacerlo desde el feature branch al branch de integración
 
-### 6.8 Hacer un merge del pull request
+### 6.9 Hacer un merge del pull request
 
-### 6.9 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
+### 6.10 Eliminar el feature branch en github (repositorio remoto) y el repositorio local
 
-### 6.10 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
+### 6.11 Hacer un fetch y un pull en el repositorio local para traer los cambios del pull request y merge del repositorio remoto
 
 ## 7 COMO una persona PUEDO ver en cualquier dispositivo la sección “Contacto” del Curriculum Vitae PARA leerlos
 
