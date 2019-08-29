@@ -88,6 +88,13 @@ sudo systemctl status docker
 ```
 adduser desarrollo
 ```
+
+Agregar el usuario desarrollo al grupo docker
+
+```
+usermod -aG docker desarrollo
+```
+
 Impersonarme como el usuario desarrollo
 ```
 sudo su desarrollo
