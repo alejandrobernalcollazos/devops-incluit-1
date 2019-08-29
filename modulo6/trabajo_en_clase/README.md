@@ -120,5 +120,5 @@ docker build -t frontend:v1 .
 ## 11. Crear un contenedor a partir de la imagen frontend:v1
 
 ```
-docker run -d frontend:v1
+docker run -d -p 80:80 frontend:v1
 ```
