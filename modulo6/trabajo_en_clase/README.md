@@ -98,3 +98,27 @@ sudo su desarrollo
 ```
 cd ~
 ```
+
+## 8. hacer un clone del repositorio de frontEnd
+
+```
+git clone https://github.com/alejandrobernalcollazos/abernal
+```
+
+## 9. Entrar a la carpeta principal del repositorio
+
+```
+cd abernal
+```
+
+## 10. Ejecutar el comando docker build
+
+```
+docker build -t frontend:v1 .
+```
+
+## 11. Crear un contenedor a partir de la imagen frontend:v1
+
+```
+docker run -d frontend:v1
+```
