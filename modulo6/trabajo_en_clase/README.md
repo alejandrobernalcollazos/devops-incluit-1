@@ -122,3 +122,40 @@ docker build -t frontend:v1 .
 ```
 docker run -d -p 80:80 frontend:v1
 ```
+
+## 12. Pide a tu coordinador crear un registro A en el servidor de DNS para apuntar a tu maquina
+
+## 13. Valida que la pagina web este respondiendo en el subdominio asignado por el coordinador
+
+## 14. Verifica los contenedores que tienes corriendo
+
+```
+docker ps
+```
+
+## 15. Verificar las imagenes existentes en la maquina local
+
+```
+docker images
+```
+## 16. Parar el contenedor corriendo actualmente
+
+```
+docker stop <container name>
+```
+
+## 17. Valida que la pagina web ya no responde en el subdominio asignado por el coordinador
+
+## 18. Para el servicio de docker engine
+
+este comando debes ejecutarlo como root
+
+```
+systemctl stop docker
+```
+
+## 19. Valida que docker engine no este corriendo
+
+```
+docker version
+```
