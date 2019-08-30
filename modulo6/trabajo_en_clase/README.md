@@ -166,3 +166,33 @@ systemctl stop docker
 ```
 docker version
 ```
+
+# Parte 2
+
+## 20. Ser root
+
+## 21. Instalar un servidor de MySQL 
+
+```
+apt install mysql-server
+```
+
+## 22. Ingresar en la consola de la base de datos
+
+```
+msyql
+```
+
+## 23. crear la base de datos "valores"
+
+```
+mysql> create database valores
+```
+
+## 24. seleccionar la base de datos "valores"
+
+```
+mysql> use valores
+```
+
+## 25. 
