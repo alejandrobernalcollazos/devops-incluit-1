@@ -198,7 +198,7 @@ mysql> USE curriculum;
 ## 25. Crear la tabla "attitudes"
 
 ```
-CREATE TABLE IF NOT EXISTS attitudes (
+mysql> CREATE TABLE IF NOT EXISTS attitudes (
     id int(11) NOT NULL,
     name varchar(200) NOT NULL,
     description varchar(200) NOT NULL
@@ -208,14 +208,14 @@ CREATE TABLE IF NOT EXISTS attitudes (
 ## 26. Configurar el campo id como clave primaria en la tabla "attitudes"
 
 ```
-ALTER TABLE attitudes ADD PRIMARY KEY (id);
-ALTER TABLE attitudes MODIFY id int(11) NOT NULL AUTO_INCREMENT;
+mysql> ALTER TABLE attitudes ADD PRIMARY KEY (id);
+mysql> ALTER TABLE attitudes MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 ```
 
 Agregamos también datos para pruebas
 
 ```
-INSERT INTO attitudes (name, description) VALUES
+mysql> INSERT INTO attitudes (name, description) VALUES
   ('Pasión', 'Soy una persona muy apasionada '),
   ('Honestidad', 'Soy una persona que trata de ser lo más honesta posible'),
   ('Tolerancia', 'Soy una persona tolerante'),
