@@ -228,10 +228,10 @@ INSERT INTO attitudes (name, description) VALUES
 mysql> CREATE USER 'attitudes'@'localhost' IDENTIFIED BY 'password';
 ```
 
-## 28. Dar permisos al usuario "values" sobre la base de datos curriculum y todas sus tablas
+## 28. Dar permisos al usuario "attitudes" sobre la base de datos curriculum y todas sus tablas
 
 ```
-mysql> GRANT ALL PRIVILEGES ON curriculum.* TO 'attitudes'@'localhost';
+mysql> GRANT ALL PRIVILEGES ON curriculum.attitudes TO 'attitudes'@'localhost';
 ```
 
 ## 29. Actualizar privilegios
