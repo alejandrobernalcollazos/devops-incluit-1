@@ -198,40 +198,40 @@ mysql> USE curriculum;
 ## 25. Crear la tabla "values"
 
 ```
-CREATE TABLE IF NOT EXISTS values (
+CREATE TABLE IF NOT EXISTS attitudes (
     id int(11) NOT NULL,
     name varchar(200) NOT NULL,
     description varchar(200) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
-## 26. Configurar el campo id como clave primaria en la tabla "values"
+## 26. Configurar el campo id como clave primaria en la tabla "attitudes"
 
 ```
-ALTER TABLE values ADD PRIMARY KEY (id);
-ALTER TABLE values MODIFY id int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE attitudes ADD PRIMARY KEY (id);
+ALTER TABLE attitudes MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 ```
 
 Agregamos también datos para pruebas
 
 ```
-INSERT INTO values (name, description) VALUES
+INSERT INTO attitudes (name, description) VALUES
   ('Pasión', 'Soy una persona muy apasionada '),
   ('Honestidad', 'Soy una persona que trata de ser lo más honesta posible'),
   ('Tolerancia', 'Soy una persona tolerante'),
   ('Respeto', 'Soy una persona muy respetuosa');
 ```
 
-## 27. Crear el usuario "values"
+## 27. Crear el usuario "attitudes"
 
 ```
-mysql> CREATE USER 'values'@'localhost' IDENTIFIED BY 'password';
+mysql> CREATE USER 'attitudes'@'localhost' IDENTIFIED BY 'password';
 ```
 
 ## 28. Dar permisos al usuario "values" sobre la base de datos curriculum y todas sus tablas
 
 ```
-mysql> GRANT ALL PRIVILEGES ON curriculum.* TO 'values'@'localhost';
+mysql> GRANT ALL PRIVILEGES ON curriculum.* TO 'attitudes'@'localhost';
 ```
 
 ## 29. Actualizar privilegios
@@ -301,7 +301,7 @@ app.get('/', function (req, res) {
 // connection configurations
 var dbConn = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'attitudes',
     password: 'password',
     database: 'curriculum'
 });
@@ -310,34 +310,34 @@ var dbConn = mysql.createConnection({
 dbConn.connect(); 
  
  
-// Retrieve all values 
-app.get('/values', function (req, res) {
-    dbConn.query('SELECT * FROM values', function (error, results, fields) {
+// Retrieve all attitudes 
+app.get('/attitudes', function (req, res) {
+    dbConn.query('SELECT * FROM attitudes', function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'values list.' });
+        return res.send({ error: false, data: results, message: 'attitudes list.' });
     });
 });
  
  
-// Retrieve value with id 
-app.get('/value/:id', function (req, res) {
+// Retrieve attitude with id 
+app.get('/attitude/:id', function (req, res) {
   
-    let value_id = req.params.id;
+    let attitude_id = req.params.id;
   
-    if (!value_id) {
-        return res.status(400).send({ error: true, message: 'Please provide value_id' });
+    if (!attitude_id) {
+        return res.status(400).send({ error: true, message: 'Please provide attitude_id' });
     }
   
-    dbConn.query('SELECT * FROM values where id=?', value_id, function (error, results, fields) {
+    dbConn.query('SELECT * FROM attitudes where id=?', attitude_id, function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'values list.' });
+        return res.send({ error: false, data: results[0], message: 'attitudes list.' });
     });
   
 });
  
  
-// Add a new value  
-app.post('/value', function (req, res) {
+// Add a new attitude  
+app.post('/attitude', function (req, res) {
   
     let name = req.body.name;
     let description = req.body.description;
@@ -346,41 +346,41 @@ app.post('/value', function (req, res) {
         return res.status(400).send({ error:true, message: 'Please provide name and description' });
     }
   
-    dbConn.query("INSERT INTO values SET ? ", { value: value }, function (error, results, fields) {
+    dbConn.query("INSERT INTO attitudes SET ? ", { name: name, description: description }, function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'New value has been created successfully.' });
+        return res.send({ error: false, data: results, message: 'New attitude has been created successfully.' });
     });
 });
  
  
-//  Update value with id
-app.put('/value', function (req, res) {
+//  Update attitude with id
+app.put('/attitude', function (req, res) {
   
-    let value_id = req.body.value_id;
-    let value = req.body.value;
+    let attitude_id = req.body.attitude_id;
+    let attitude = req.body.attitude;
   
-    if (!value_id || !value) {
-        return res.status(400).send({ error: value, message: 'Please provide value and value_id' });
+    if (!attitude_id || !attitude) {
+        return res.status(400).send({ error: attitude, message: 'Please provide attitude and attitude_id' });
     }
   
-    dbConn.query("UPDATE values SET value = ? WHERE id = ?", [value, value_id], function (error, results, fields) {
+    dbConn.query("UPDATE attitudes SET attitude = ? WHERE id = ?", [attitude, attitude_id], function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'value has been updated successfully.' });
+        return res.send({ error: false, data: results, message: 'attitude has been deleted successfully.' });
     });
 });
  
  
-//  Delete value
-app.delete('/value', function (req, res) {
+//  Delete attitude
+app.delete('/attitude', function (req, res) {
   
-    let value_id = req.body.value_id;
+    let attitude_id = req.body.attitude_id;
   
-    if (!value_id) {
-        return res.status(400).send({ error: true, message: 'Please provide value_id' });
+    if (!attitude_id) {
+        return res.status(400).send({ error: true, message: 'Please provide attitude_id' });
     }
-    dbConn.query('DELETE FROM values WHERE id = ?', [value_id], function (error, results, fields) {
+    dbConn.query('DELETE FROM attitudes WHERE id = ?', [attitude_id], function (error, results, fields) {
         if (error) throw error;
-        return res.send({ error: false, data: results, message: 'value has been updated successfully.' });
+        return res.send({ error: false, data: results, message: 'attitude has been updated successfully.' });
     });
 }); 
  
