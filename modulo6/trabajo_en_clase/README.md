@@ -183,16 +183,49 @@ apt install mysql-server
 msyql
 ```
 
-## 23. crear la base de datos "valores"
+## 23. Crear la base de datos curriculum
 
 ```
-mysql> create database valores
+mysql> CREATE DATABASE curriculum;
 ```
 
-## 24. seleccionar la base de datos "valores"
+## 24. Seleccionar la base de datos para comenzar a trabajar en ella
 
 ```
-mysql> use valores
+mysql> USE curriculum;
 ```
 
-## 25. 
+## 25. Crear la tabla "values"
+
+```
+CREATE TABLE IF NOT EXISTS values (
+    id int(11) NOT NULL,
+    name varchar(200) NOT NULL,
+    description varchar(200) NOT NULL
+  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
+
+## 26. Configurar el campo id como clave primaria en la tabla "values"
+
+```
+ALTER TABLE values ADD PRIMARY KEY (id);
+ALTER TABLE values MODIFY id int(11) NOT NULL AUTO_INCREMENT;
+```
+
+## 27. Crear el usuario "values"
+
+```
+mysql> CREATE USER 'values'@'localhost' IDENTIFIED BY 'password';
+```
+
+## 24. Dar permisos al "values" sobre la base de datos curriculum y todas sus tablas
+
+```
+mysql> GRANT ALL PRIVILEGES ON curriculum.* TO 'values'@'localhost';
+```
+
+## 25. Actualizar privilegios
+
+```
+mysql> FLUSH PRIVILEGES;
+```
