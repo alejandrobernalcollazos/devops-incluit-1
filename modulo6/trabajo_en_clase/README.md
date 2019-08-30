@@ -195,7 +195,7 @@ mysql> CREATE DATABASE curriculum;
 mysql> USE curriculum;
 ```
 
-## 25. Crear la tabla "values"
+## 25. Crear la tabla "attitudes"
 
 ```
 CREATE TABLE IF NOT EXISTS attitudes (
