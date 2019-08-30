@@ -258,11 +258,11 @@ sudo su desarrollo
 cd
 ```
 
-## 33. Crear una carpeta con el nombre "values-api" e ingresar a la misma
+## 33. Crear una carpeta con el nombre "attitudes-api" e ingresar a la misma
 
 ```
-mkdir values-api
-cd values-api
+mkdir attitudes-api
+cd attitudes-api
 ```
 
 ## 34. Ejecutar el comando npm init y npm install
