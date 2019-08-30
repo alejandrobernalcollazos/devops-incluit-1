@@ -180,7 +180,7 @@ apt install mysql-server
 ## 22. Ingresar en la consola de la base de datos
 
 ```
-msyql
+mysql
 ```
 
 ## 23. Crear la base de datos curriculum
