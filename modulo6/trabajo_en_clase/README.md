@@ -212,20 +212,182 @@ ALTER TABLE values ADD PRIMARY KEY (id);
 ALTER TABLE values MODIFY id int(11) NOT NULL AUTO_INCREMENT;
 ```
 
+Agregamos también datos para pruebas
+
+```
+INSERT INTO values (name, description) VALUES
+  ('Pasión', 'Soy una persona muy apasionada '),
+  ('Honestidad', 'Soy una persona que trata de ser lo más honesta posible'),
+  ('Tolerancia', 'Soy una persona tolerante'),
+  ('Respeto', 'Soy una persona muy respetuosa');
+```
+
 ## 27. Crear el usuario "values"
 
 ```
 mysql> CREATE USER 'values'@'localhost' IDENTIFIED BY 'password';
 ```
 
-## 24. Dar permisos al "values" sobre la base de datos curriculum y todas sus tablas
+## 28. Dar permisos al usuario "values" sobre la base de datos curriculum y todas sus tablas
 
 ```
 mysql> GRANT ALL PRIVILEGES ON curriculum.* TO 'values'@'localhost';
 ```
 
-## 25. Actualizar privilegios
+## 29. Actualizar privilegios
 
 ```
 mysql> FLUSH PRIVILEGES;
+```
+
+## 30. Salir de la consola de mysql
+
+```
+mysql> exit;
+```
+
+## 31. Convertirse en el usuario desarrollo
+
+```
+sudo su desarrollo
+```
+
+## 32. Ir al directorio "home" del usuario desarrollo
+
+```
+cd
+```
+
+## 33. Crear una carpeta con el nombre "values-api" e ingresar a la misma
+
+```
+mkdir values-api
+cd values-api
+```
+
+## 34. Ejecutar el comando npm init y npm install
+
+```
+npm init --yes
+npm install 
+```
+
+## 35. Instalar express, mysql y body-parser
+
+```
+npm install express --save
+npm install mysql --save
+npm install body-parser --save
+```
+
+## 36. Crear el archivo  server.js con el siguiente contenido
+
+```
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var mysql = require('mysql');
+  
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+  
+  
+// default route
+app.get('/', function (req, res) {
+    return res.send({ error: true, message: 'hello' })
+});
+// connection configurations
+var dbConn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'curriculum'
+});
+  
+// connect to database
+dbConn.connect(); 
+ 
+ 
+// Retrieve all values 
+app.get('/values', function (req, res) {
+    dbConn.query('SELECT * FROM values', function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'values list.' });
+    });
+});
+ 
+ 
+// Retrieve value with id 
+app.get('/value/:id', function (req, res) {
+  
+    let value_id = req.params.id;
+  
+    if (!value_id) {
+        return res.status(400).send({ error: true, message: 'Please provide value_id' });
+    }
+  
+    dbConn.query('SELECT * FROM values where id=?', value_id, function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results[0], message: 'values list.' });
+    });
+  
+});
+ 
+ 
+// Add a new value  
+app.post('/value', function (req, res) {
+  
+    let name = req.body.name;
+    let description = req.body.description;
+  
+    if (!name || !description) {
+        return res.status(400).send({ error:true, message: 'Please provide name and description' });
+    }
+  
+    dbConn.query("INSERT INTO values SET ? ", { value: value }, function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'New value has been created successfully.' });
+    });
+});
+ 
+ 
+//  Update value with id
+app.put('/value', function (req, res) {
+  
+    let value_id = req.body.value_id;
+    let value = req.body.value;
+  
+    if (!value_id || !value) {
+        return res.status(400).send({ error: value, message: 'Please provide value and value_id' });
+    }
+  
+    dbConn.query("UPDATE values SET value = ? WHERE id = ?", [value, value_id], function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'value has been updated successfully.' });
+    });
+});
+ 
+ 
+//  Delete value
+app.delete('/value', function (req, res) {
+  
+    let value_id = req.body.value_id;
+  
+    if (!value_id) {
+        return res.status(400).send({ error: true, message: 'Please provide value_id' });
+    }
+    dbConn.query('DELETE FROM values WHERE id = ?', [value_id], function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'value has been updated successfully.' });
+    });
+}); 
+ 
+// set port
+app.listen(3000, function () {
+    console.log('Node app is running on port 3000');
+});
+ 
+module.exports = app;
 ```
