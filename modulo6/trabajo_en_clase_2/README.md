@@ -252,7 +252,7 @@ module.exports = app;
 ## 18. Correr el archivo server.js como un demonio
 
 ```
-node server.js
+node server.js &
 ```
 
 ## 19. Probar en postman un request GET
@@ -347,7 +347,7 @@ module.exports = app;
 ## 23. Correr el archivo server.js como un demonio
 
 ```
-node server.js
+node server.js &
 ```
 
 ## 24. Probar en postman un request GET
