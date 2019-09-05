@@ -343,3 +343,114 @@ app.listen(3000, function () {
 
 module.exports = app;
 ```
+
+## 23. Correr el archivo server.js como un demonio
+
+```
+node server.js
+```
+
+## 24. Probar en postman un request GET
+
+A la siguiente url
+
+```
+http://nombre-de-dominio:puerto/
+```
+
+## 25. Verificar que la api devuelva datos
+
+## 26. En la consola matar al demonio
+
+### 26.1 volverse root
+
+```
+exit
+```
+
+### 26.2 ejecutar el comando kill
+
+```
+kill -9 <PID del proceso de la API>
+```
+
+## 27. Agregar datos de conección a la base de datos MySQL
+
+### 27.1 Volverse el usuario desarrollo
+
+```
+sudo su desarrollo
+```
+
+ir a la carpeta home
+
+```
+cd
+```
+
+### 27.2 Dentro de la carpeta attitudes-api
+
+```
+cd attitudes-api
+```
+
+### 27.3 Modificar el archivo server.js
+
+```
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+var mysql = require('mysql');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+// default route
+app.get('/', function (req, res) {
+    return res.send({ error: true, message: 'hello' })
+});
+
+// connection configurations
+var dbConn = mysql.createConnection({
+    host: 'localhost',
+    user: 'attitudes',
+    password: 'password',
+    database: 'curriculum'
+});
+
+// connect to database
+dbConn.connect(); 
+
+// Retrieve all attitudes 
+app.get('/attitudes', function (req, res) {
+    dbConn.query('SELECT * FROM attitudes', function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'attitudes list.' });
+    });
+});
+
+// Retrieve attitude with id 
+app.get('/attitude/:id', function (req, res) {
+  
+    let attitude_id = req.params.id;
+  
+    if (!attitude_id) {
+        return res.status(400).send({ error: true, message: 'Please provide attitude_id' });
+    }
+  
+    dbConn.query('SELECT * FROM attitudes where id=?', attitude_id, function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results[0], message: 'attitudes list.' });
+    });
+  
+});
+
+// set port
+app.listen(3000, function () {
+    console.log('Node app is running on port 3000');
+});
+
+module.exports = app;
+```
