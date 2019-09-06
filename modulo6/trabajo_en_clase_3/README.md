@@ -192,7 +192,7 @@ docker build -t frontend:v1 .
 ## 18. Crear un contenedor de frontend en base a la imagen frontend:v1
 
 ```
-docker run -p 80:80 frontend:v1
+docker run -d -p 80:80 frontend:v1
 ```
 
 ## 19. Probar que el contenedor este funcionando accediendo por la ip desde el browser
