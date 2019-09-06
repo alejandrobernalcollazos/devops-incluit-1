@@ -18,72 +18,49 @@ ssh -i <path a la llave privada> root@<ip de la maquina>
 apt-get update
 ```
 
-## 4. Instalar NodeJS
-
-### 4.1 Instalar curl
-
-```
-apt-get install curl
-
-```
-
-### 4.2 Configurar el repositorio
-
-```
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-```
-
-### 4.3 Instalar node
-
-```
-apt-get install nodejs
-```
-
-## 5. Instalar Docker
-
-### 5.1 Instalar dependencias
+### 4. Instalar dependencias de docker
 
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
-### 5.2 Instalar las llaves de GPG
+### 5. Instalar las llaves de GPG de docker
 
 ```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-### 5.3 Agregar el repositorio de Docker en los repositorios de APT
+### 6. Agregar el repositorio de Docker en los repositorios de APT
 
 ```
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 ```
 
-### 5.4 Actualizar los repositorios
+### 7. Actualizar los repositorios
 
 ```
 sudo apt update
 ```
 
-### 5.5 Limpiar la cache de repositorios
+### 8. Limpiar la cache de repositorios
 
 ```
 apt-cache policy docker-ce
 ```
 
-### 5.6 Instalar docker
+### 9. Instalar docker
 
 ```
 sudo apt install docker-ce
 ```
 
-### 5.7 Validar que docker este corriendo
+### 10. Validar que docker este corriendo
 
 ```
 sudo systemctl status docker
 ```
 
-## 6. Crear el usuario "desarrollo" e impersonarme con el usuario desarrollo
+## 11. Crear el usuario "desarrollo" e impersonarme con el usuario desarrollo
 
 ```
 adduser desarrollo
@@ -95,19 +72,7 @@ Agregar el usuario desarrollo al grupo docker
 usermod -aG docker desarrollo
 ```
 
-Impersonarme como el usuario desarrollo
-
-```
-sudo su desarrollo
-```
-
-## 7. Ir al home del usuario desarrollo
-
-```
-cd ~
-```
-
-## 8. Pide a tu coordinador crear un registro A en el servidor de DNS para apuntar a tu maquina
+## 12. Pide a tu coordinador crear un registro A en el servidor de DNS para apuntar a tu maquina
 
 # Parte 2
 
@@ -200,257 +165,60 @@ sudo su desarrollo
 cd
 ```
 
-## 14. Crear una carpeta con el nombre "attitudes-api" e ingresar a la misma
+## 14. Hacer un clone del siguiente repositorio
 
 ```
-mkdir attitudes-api
-cd attitudes-api
+git clone https://github.com/alejandrobernalcollazos/abernal-attitudes
 ```
 
-## 15. Ejecutar el comando npm init y npm install
+## 15. Hacer un clone del siguiente repositorio
 
 ```
-npm init --yes
-npm install 
+git clone https://github.com/alejandrobernalcollazos/abernal
 ```
 
-## 16. Instalar express, mysql y body-parser
+## 16. Ingresar al folder abernal
 
 ```
-npm install express --save
-npm install mysql --save
-npm install body-parser --save
+cd abernal
 ```
 
-## 17. Crear el archivo server.js con el siguiente contenido
+## 17. Crear una imagen de docker del frontend
 
 ```
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mysql = require('mysql');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-
-// default route
-app.get('/', function (req, res) {
-    return res.send({ error: true, message: 'hello' })
-});
-
-// set port
-app.listen(3000, function () {
-    console.log('Node app is running on port 3000');
-});
-
-module.exports = app;
+docker build -t frontend:v1 .
 ```
 
-## 18. Correr el archivo server.js como un demonio
+## 18. Crear un contenedor de frontend en base a la imagen frontend:v1
 
 ```
-node server.js &
+docker run -p 80:80 frontend:v1
 ```
 
-## 19. Probar en postman un request GET
+## 19. Probar que el contenedor este funcionando accediendo por la ip desde el browser
 
-A la siguiente url 
-
-```
-http://nombre-de-dominio:puerto/
-```
-
-## 20. Verificar que la api devuelva datos
-
-## 21. En la consola matar al demonio
-
-### 21.1 volverse root
+## 20. Salir de la carpeta frontend
 
 ```
-exit
+cd ..
 ```
 
-### 21.2 ejecutar el comando kill
+## 21. Entrar a la carpeta abernal-attitudes
 
 ```
-kill -9 <PID del proceso de la API>
+cd abernal-attitudes
 ```
 
-## 22. Agregar datos de conección a la base de datos MySQL
-
-### 22.1 Volverse el usuario desarrollo
+## 22. Crear la imagen de docker "attitudes" de la api
 
 ```
-sudo su desarrollo
+docker build -t attitudes:v1 .
 ```
 
-ir a la carpeta home
+## 23. Crear un contenedor basado en la imagen "attitudes"
 
 ```
-cd
+docker run -p 80:80 attitudes:v1
 ```
 
-### 22.2 Dentro de la carpeta attitudes-api
-
-```
-cd attitudes-api
-```
-
-### 22.3 Modificar el archivo server.js
-
-```
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mysql = require('mysql');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-// default route
-app.get('/', function (req, res) {
-    return res.send({ error: true, message: 'hello' })
-});
-
-// connection configurations
-var dbConn = mysql.createConnection({
-    host: 'localhost',
-    user: 'attitudes',
-    password: 'password',
-    database: 'curriculum'
-});
-
-// connect to database
-dbConn.connect(); 
-
-// Retrieve all attitudes 
-app.get('/attitudes', function (req, res) {
-    dbConn.query('SELECT * FROM attitudes', function (error, results, fields) {
-        if (error) throw error;
-        return res.send({ error: false, data: results, message: 'attitudes list.' });
-    });
-});
-
-// set port
-app.listen(3000, function () {
-    console.log('Node app is running on port 3000');
-});
-
-module.exports = app;
-```
-
-## 23. Correr el archivo server.js como un demonio
-
-```
-node server.js &
-```
-
-## 24. Probar en postman un request GET
-
-A la siguiente url
-
-```
-http://nombre-de-dominio:puerto/
-```
-
-## 25. Verificar que la api devuelva datos
-
-## 26. En la consola matar al demonio
-
-### 26.1 volverse root
-
-```
-exit
-```
-
-### 26.2 ejecutar el comando kill
-
-```
-kill -9 <PID del proceso de la API>
-```
-
-## 27. Agregar datos de conección a la base de datos MySQL
-
-### 27.1 Volverse el usuario desarrollo
-
-```
-sudo su desarrollo
-```
-
-ir a la carpeta home
-
-```
-cd
-```
-
-### 27.2 Dentro de la carpeta attitudes-api
-
-```
-cd attitudes-api
-```
-
-### 27.3 Modificar el archivo server.js
-
-```
-var express = require('express');
-var app = express();
-var bodyParser = require('body-parser');
-var mysql = require('mysql');
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-
-// default route
-app.get('/', function (req, res) {
-    return res.send({ error: true, message: 'hello' })
-});
-
-// connection configurations
-var dbConn = mysql.createConnection({
-    host: 'localhost',
-    user: 'attitudes',
-    password: 'password',
-    database: 'curriculum'
-});
-
-// connect to database
-dbConn.connect(); 
-
-// Retrieve all attitudes 
-app.get('/attitudes', function (req, res) {
-    dbConn.query('SELECT * FROM attitudes', function (error, results, fields) {
-        if (error) throw error;
-        return res.send({ error: false, data: results, message: 'attitudes list.' });
-    });
-});
-
-// Retrieve attitude with id 
-app.get('/attitude/:id', function (req, res) {
-  
-    let attitude_id = req.params.id;
-  
-    if (!attitude_id) {
-        return res.status(400).send({ error: true, message: 'Please provide attitude_id' });
-    }
-  
-    dbConn.query('SELECT * FROM attitudes where id=?', attitude_id, function (error, results, fields) {
-        if (error) throw error;
-        return res.send({ error: false, data: results[0], message: 'attitudes list.' });
-    });
-  
-});
-
-// set port
-app.listen(3000, function () {
-    console.log('Node app is running on port 3000');
-});
-
-module.exports = app;
-```
+## 24. Hacer Trouble Shooting en clase, por la conexión a la DB
