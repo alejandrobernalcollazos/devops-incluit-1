@@ -21,7 +21,7 @@ apt-get update
 ### 4. Instalar dependencias de docker
 
 ```
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+apt install apt-transport-https ca-certificates curl software-properties-common
 ```
 
 ### 5. Instalar las llaves de GPG de docker
@@ -33,13 +33,13 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ### 6. Agregar el repositorio de Docker en los repositorios de APT
 
 ```
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 ```
 
 ### 7. Actualizar los repositorios
 
 ```
-sudo apt update
+apt update
 ```
 
 ### 8. Limpiar la cache de repositorios
@@ -51,13 +51,13 @@ apt-cache policy docker-ce
 ### 9. Instalar docker
 
 ```
-sudo apt install docker-ce
+apt install docker-ce
 ```
 
 ### 10. Validar que docker este corriendo
 
 ```
-sudo systemctl status docker
+systemctl status docker
 ```
 
 ## 11. Crear el usuario "desarrollo" e impersonarme con el usuario desarrollo
@@ -156,7 +156,7 @@ mysql> exit;
 ## 12. Convertirse en el usuario desarrollo
 
 ```
-sudo su desarrollo
+su desarrollo
 ```
 
 ## 13. Ir al directorio "home" del usuario desarrollo
