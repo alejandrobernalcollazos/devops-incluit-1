@@ -100,4 +100,20 @@ resource "aws_instance" "example" {
 }
 ```
 
+## 15. Ejecutar el comando terraform init
 
+```
+terraform init
+```
+
+## 16. Ejecutar el comando terraform plan
+
+```
+terraform plan
+```
+
+## 17. Ejecutar el comando terraform apply
+
+```
+terraform apply
+```
