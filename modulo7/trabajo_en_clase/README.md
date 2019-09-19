@@ -64,6 +64,20 @@ cd ~
 pip3 install awscli --upgrade --user
 ```
 
+## 9.1 Modificar el archivo "~/.bashrc"
+
+```
+nano ~/.bashrc
+```
+
+Al final del archivo poner el siguiente string
+
+```
+## Agregando la carpeta que contiene el binario de aws en la variable de ambiente PATH
+export PATH=$PATH:/home/desarrollo/.local/bin
+```
+Guardar el archivo
+
 ## 10. Configurar aws con las credenciales que te debe proveer el instructor
 
 ```
