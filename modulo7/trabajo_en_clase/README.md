@@ -78,6 +78,12 @@ export PATH=$PATH:/home/desarrollo/.local/bin
 ```
 Guardar el archivo
 
+## 9.2 Actualizar el archivo .bashrc
+
+```
+source ~/.bashrc
+```
+
 ## 10. Configurar aws con las credenciales que te debe proveer el instructor
 
 ```
