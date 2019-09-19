@@ -143,3 +143,15 @@ terraform plan
 ```
 terraform apply
 ```
+
+## 18. Ejecutar el comando terraform show
+
+```
+terraform show
+```
+
+## 19. Ejecutar el comando terraform destroy
+
+```
+terraform destroy
+```
