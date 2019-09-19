@@ -25,7 +25,7 @@ apt-get install curl zip unzip python3-pip -y
 ## 4. Descargar el binario de terraform
 
 ```
-curl https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
+wget https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_linux_amd64.zip
 ```
 
 ## 5. Descomprimir el binario de terraform
