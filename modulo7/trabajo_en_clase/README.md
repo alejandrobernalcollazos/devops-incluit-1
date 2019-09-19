@@ -46,6 +46,12 @@ mv terraform /usr/bin
 adduser desarrollo
 ```
 
+Impersonarme como el usuario desarrollo
+
+```
+su desarrollo
+```
+
 ## 8. Entrar en el home del usuario
 
 ```
