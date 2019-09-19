@@ -37,7 +37,7 @@ unzip terraform_0.12.9_linux_amd64.zip
 ## 6. Poner el binario dentro de el path /src/bin
 
 ```
-mv terraform_0.12.9_linux_adm64 /src/bin
+mv terraform /usr/bin
 ```
 
 ## 7. Crear el usuario "desarrollo"
