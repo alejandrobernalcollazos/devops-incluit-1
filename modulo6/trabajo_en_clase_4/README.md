@@ -123,3 +123,27 @@ git clone https://github.com/e-dmolina/front_vida_sin_tacc.git
 ```
 git clone https://github.com/e-dmolina/back_vida_sin_tacc.git
 ```
+
+## 6. Entrar en el repositorio del backend
+
+```
+cd back_vida_sin_tacc
+```
+
+## 7. Crear una imagen de docker para el backend
+
+```
+docker build -t backend:v1 .
+```
+
+## 8. Entrar en el repositorio del frontend
+
+```
+cd ~/front_vida_sin_tacc
+```
+
+## 9. Crear una imagen de docker para el frontend
+
+```
+docker build -t frontend:v1 .
+```
