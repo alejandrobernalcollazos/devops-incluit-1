@@ -88,16 +88,38 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 # Parte 2
 
-## 1. Ser root
+## 1. Instalar Mongo DB
 
 ```
-exit
-```
-
-## 2. Instalar Mongo DB
-
-```
-apt update
 apt install -y mongodb
 ```
 
+Check el servicio
+
+```
+systemctl status mongodb
+```
+
+## 2. Impersonarse como el usuario desarrollo
+
+```
+sudo su desarrollo
+```
+
+## 3. Ir al home del usuario desarrollo 
+
+```
+cd 
+```
+
+## 4. Clonar los repositorios de Dieguito del frontend
+
+```
+git clone https://github.com/e-dmolina/front_vida_sin_tacc.git
+```
+
+## 5. Clonar los repositorios de Dieguito del backend
+
+```
+git clone https://github.com/e-dmolina/back_vida_sin_tacc.git
+```
