@@ -51,7 +51,7 @@ apt-cache policy docker-ce
 ### 9. Instalar docker
 
 ```
-apt install docker-ce
+apt install docker-ce -y
 ```
 
 ### 10. Validar que docker este corriendo
