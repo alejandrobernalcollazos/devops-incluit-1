@@ -21,7 +21,7 @@ apt-get update
 ### 4. Instalar dependencias de docker
 
 ```
-apt install apt-transport-https ca-certificates curl software-properties-common
+apt install apt-transport-https ca-certificates curl software-properties-common -y
 ```
 
 ### 5. Instalar las llaves de GPG de docker
