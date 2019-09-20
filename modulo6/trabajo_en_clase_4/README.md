@@ -72,6 +72,20 @@ Agregar el usuario desarrollo al grupo docker
 usermod -aG docker desarrollo
 ```
 
+## 12. Instalar docker componse
+
+##### 12.1
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+#### 12.2 
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
 # Parte 2
 
 ## 1. Ser root
