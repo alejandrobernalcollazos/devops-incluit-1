@@ -147,3 +147,15 @@ cd ~/front_vida_sin_tacc
 ```
 docker build -t frontend:v1 .
 ```
+
+## 10. Verificar que las imagenes esten creadas
+
+```
+docker images 
+```
+
+opcional
+
+```
+docker images ls
+```
