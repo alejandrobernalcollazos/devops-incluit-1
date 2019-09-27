@@ -11,7 +11,7 @@
 ## 3. Instalar dependencias de Docker
 
 ```
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
+apt install apt-transport-https ca-certificates curl software-properties-common -y
 ```
 
 ## 4. Configurar las llave de GPG para el repositorio de docker
@@ -23,7 +23,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ## 5. Agregar el repositorio de Docker en los repositorios de APT
 
 ```
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 ```
 
 ## 6. Limpiar la cache de repositorios
@@ -35,7 +35,7 @@ apt-cache policy docker-ce
 ## 7. Instalar docker
 
 ```
-sudo apt install docker-ce
+sudo apt install docker-ce -y
 ```
 
 ## 8. Validar que docker este corriendo
@@ -47,7 +47,7 @@ sudo systemctl status docker
 ## 9. Instalar Java
 
 ```
-apt install openjdk-8-jdk
+apt install openjdk-8-jdk -y
 ```
 
 ## 10. Importar las llaves de GPG dentro del manejador de paquetes de ubuntu "apt"
@@ -65,7 +65,7 @@ sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.l
 ## 12. Instalar Jenkins
 
 ```
-apt install jenkins
+apt install jenkins -y
 ```
 
 ## 13. Verificar el estatus de Jenkins
