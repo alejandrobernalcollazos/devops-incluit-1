@@ -105,3 +105,41 @@ Suggested plugins
 - Confirmar password
 - Full name
 - E-mail address
+
+## 19. Confirmar la url de jenkins
+
+Corroborar la url para Jenkins
+
+## 20. Crear un nuevo Item
+
+Click en nuevo item desde la interfaz grafica
+
+## 21. Definir un nombre
+
+```
+FrontEnd Pipeline
+```
+
+## 21. Seleccionar la opcion
+
+```
+Multibranch Pipeline
+```
+
+## 22. Dar 
+
+```
+OK
+```
+
+## 23. Configurar con los siguientes datos
+
+- Display name: Frontend pipeline
+- Branch sources : Github
+- Repository url : https://github.com/alejandrobernalcollazos/abernal
+- Behaviours     : Discover branches
+- Build configuration : Jenkinsfile
+- Leave other as default 
+
+
+
