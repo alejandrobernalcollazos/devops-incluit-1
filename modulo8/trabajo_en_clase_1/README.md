@@ -79,3 +79,29 @@ apt install jenkins -y
 ```
 systemctl status jenkins
 ```
+
+## 15. Copiar el password que se genero en el archivo
+
+```
+cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+
+## 16. Ingresar a la interfaz grafica e ingresar el password que se auto genero
+
+```
+Chrome: http://<my dominio>:8080
+```
+
+## 17. Seleccionar Install Suggested plugins
+
+```
+Suggested plugins
+```
+
+## 18. Configurar los datos para el usuario administrador
+
+- Username
+- Password
+- Confirmar password
+- Full name
+- E-mail address
