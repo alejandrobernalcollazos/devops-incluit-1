@@ -35,13 +35,13 @@ apt-cache policy docker-ce
 ## 7. Instalar docker
 
 ```
-sudo apt install docker-ce -y
+apt install docker-ce -y
 ```
 
 ## 8. Validar que docker este corriendo
 
 ```
-sudo systemctl status docker
+systemctl status docker
 ```
 
 ## 9. Instalar Java
