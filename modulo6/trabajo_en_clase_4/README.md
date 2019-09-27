@@ -21,7 +21,7 @@ apt-get update
 ### 4. Instalar dependencias de docker
 
 ```
-apt install apt-transport-https ca-certificates curl software-properties-common
+apt install apt-transport-https ca-certificates curl software-properties-common -y
 ```
 
 ### 5. Instalar las llaves de GPG de docker
@@ -51,7 +51,7 @@ apt-cache policy docker-ce
 ### 9. Instalar docker
 
 ```
-apt install docker-ce
+apt install docker-ce -y
 ```
 
 ### 10. Validar que docker este corriendo
@@ -72,153 +72,90 @@ Agregar el usuario desarrollo al grupo docker
 usermod -aG docker desarrollo
 ```
 
-## 12. Pide a tu coordinador crear un registro A en el servidor de DNS para apuntar a tu maquina
+## 12. Instalar docker componse
+
+##### 12.1
+
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+#### 12.2 
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
 
 # Parte 2
 
-## 1. Ser root
-
-## 2. Instalar un servidor de MySQL 
+## 1. Instalar Mongo DB
 
 ```
-apt install mysql-server
+apt install -y mongodb
 ```
 
-## 3. Ingresar en la consola de la base de datos
+Check el servicio
 
 ```
-mysql
+systemctl status mongodb
 ```
 
-## 4. Crear la base de datos curriculum
+## 2. Impersonarse como el usuario desarrollo
 
 ```
-mysql> CREATE DATABASE curriculum;
+sudo su desarrollo
 ```
 
-## 5. Seleccionar la base de datos para comenzar a trabajar en ella
+## 3. Ir al home del usuario desarrollo 
 
 ```
-mysql> USE curriculum;
+cd 
 ```
 
-## 6. Crear la tabla "attitudes"
+## 4. Clonar los repositorios de Dieguito del frontend
 
 ```
-mysql> CREATE TABLE IF NOT EXISTS attitudes (
-    id int(11) NOT NULL,
-    name varchar(200) NOT NULL,
-    description varchar(200) NOT NULL
-  ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+git clone https://github.com/e-dmolina/front_vida_sin_tacc.git
 ```
 
-## 7. Configurar el campo id como clave primaria en la tabla "attitudes"
+## 5. Clonar los repositorios de Dieguito del backend
 
 ```
-mysql> ALTER TABLE attitudes ADD PRIMARY KEY (id);
-mysql> ALTER TABLE attitudes MODIFY id int(11) NOT NULL AUTO_INCREMENT;
+git clone https://github.com/e-dmolina/back_vida_sin_tacc.git
 ```
 
-Agregamos también datos para pruebas
+## 6. Entrar en el repositorio del backend
 
 ```
-mysql> INSERT INTO attitudes (name, description) VALUES
-  ('Pasión', 'Soy una persona muy apasionada '),
-  ('Honestidad', 'Soy una persona que trata de ser lo más honesta posible'),
-  ('Tolerancia', 'Soy una persona tolerante'),
-  ('Respeto', 'Soy una persona muy respetuosa');
+cd back_vida_sin_tacc
 ```
 
-## 8. Crear el usuario "attitudes"
+## 7. Crear una imagen de docker para el backend
 
 ```
-mysql> CREATE USER 'attitudes'@'localhost' IDENTIFIED BY 'password';
+docker build -t backend:v1 .
 ```
 
-## 9. Dar permisos al usuario "attitudes" sobre la base de datos curriculum y todas sus tablas
+## 8. Entrar en el repositorio del frontend
 
 ```
-mysql> GRANT ALL PRIVILEGES ON curriculum.attitudes TO 'attitudes'@'localhost';
+cd ~/front_vida_sin_tacc
 ```
 
-## 10. Actualizar privilegios
-
-```
-mysql> FLUSH PRIVILEGES;
-```
-
-## 11. Salir de la consola de mysql
-
-```
-mysql> exit;
-```
-
-## 12. Convertirse en el usuario desarrollo
-
-```
-su desarrollo
-```
-
-## 13. Ir al directorio "home" del usuario desarrollo
-
-```
-cd
-```
-
-## 14. Hacer un clone del siguiente repositorio
-
-```
-git clone https://github.com/alejandrobernalcollazos/abernal-attitudes
-```
-
-## 15. Hacer un clone del siguiente repositorio
-
-```
-git clone https://github.com/alejandrobernalcollazos/abernal
-```
-
-## 16. Ingresar al folder abernal
-
-```
-cd abernal
-```
-
-## 17. Crear una imagen de docker del frontend
+## 9. Crear una imagen de docker para el frontend
 
 ```
 docker build -t frontend:v1 .
 ```
 
-## 18. Crear un contenedor de frontend en base a la imagen frontend:v1
+## 10. Verificar que las imagenes esten creadas
 
 ```
-docker run -d -p 80:80 frontend:v1
+docker images 
 ```
 
-## 19. Probar que el contenedor este funcionando accediendo por la ip desde el browser
-
-## 20. Salir de la carpeta frontend
+opcional
 
 ```
-cd ..
+docker images ls
 ```
-
-## 21. Entrar a la carpeta abernal-attitudes
-
-```
-cd abernal-attitudes
-```
-
-## 22. Crear la imagen de docker "attitudes" de la api
-
-```
-docker build -t attitudes:v1 .
-```
-
-## 23. Crear un contenedor basado en la imagen "attitudes"
-
-```
-docker run -p 80:80 attitudes:v1
-```
-
-## 24. Hacer Trouble Shooting en clase, por la conexión a la DB
