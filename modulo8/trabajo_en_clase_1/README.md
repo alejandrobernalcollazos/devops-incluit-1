@@ -50,7 +50,7 @@ systemctl status docker
 apt install openjdk-8-jdk -y
 ```
 
-## 10. Importar las llaves de GPG dentro del manejador de paquetes de ubuntu "apt"
+## 10. Importar las llaves de GPG del repositorio de jenkins dentro del manejador de paquetes de ubuntu "apt"
 
 ```
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
