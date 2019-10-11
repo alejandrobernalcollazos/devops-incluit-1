@@ -80,25 +80,39 @@ apt install jenkins -y
 systemctl status jenkins
 ```
 
-## 15. Copiar el password que se genero en el archivo
+## 15. Agregar el usuario de jenkins al grupo docker
+
+Lo hacemos para darle permiso de ejecutar comandos de docker a Jenkins
+
+```
+usermod -aG docker jenkins
+```
+
+## 16. Reiniciar jenkins
+
+```
+systemctl restart jenkins
+```
+
+## 17. Copiar el password que se genero en el archivo
 
 ```
 cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-## 16. Ingresar a la interfaz grafica e ingresar el password que se auto genero
+## 18. Ingresar a la interfaz grafica e ingresar el password que se auto genero
 
 ```
-Chrome: http://<my dominio>:8080
+Chrome: http://<mi ip>:8080
 ```
 
-## 17. Seleccionar Install Suggested plugins
+## 19. Seleccionar Install Suggested plugins
 
 ```
 Suggested plugins
 ```
 
-## 18. Configurar los datos para el usuario administrador
+## 20. Configurar los datos para el usuario administrador
 
 - Username
 - Password
@@ -106,33 +120,33 @@ Suggested plugins
 - Full name
 - E-mail address
 
-## 19. Confirmar la url de jenkins
+## 21. Confirmar la url de jenkins
 
 Corroborar la url para Jenkins
 
-## 20. Crear un nuevo Item
+## 22. Crear un nuevo Item
 
 Click en nuevo item desde la interfaz grafica
 
-## 21. Definir un nombre
+## 23. Definir un nombre
 
 ```
 FrontEnd Pipeline
 ```
 
-## 21. Seleccionar la opcion
+## 24. Seleccionar la opcion
 
 ```
 Multibranch Pipeline
 ```
 
-## 22. Dar 
+## 25. Dar 
 
 ```
 OK
 ```
 
-## 23. Configurar con los siguientes datos
+## 26. Configurar con los siguientes datos
 
 - Display name: Frontend pipeline
 - Branch sources : Github
