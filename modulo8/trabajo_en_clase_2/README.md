@@ -120,40 +120,35 @@ adduser desarrollo
 
 Agrega una password simple
 
-## 19 Agregar el usuario desarrollo al grupo docker
 
-```
-usermod -aG docker desarrollo
-```
-
-## 20 Impersonarme como el usuario desarrollo
+## 19 Impersonarme como el usuario desarrollo
 
 ```
 sudo su desarrollo
 ```
 
-## 21 Ir al home del usuario desarrollo
+## 20 Ir al home del usuario desarrollo
 
 ```
 cd ~
 ```
 
 
-## 22 Crear una carpeta con el nombre "attitudes-api" e ingresar a la misma
+## 21 Crear una carpeta con el nombre "attitudes-api" e ingresar a la misma
 
 ```
 mkdir attitudes-api
 cd attitudes-api
 ```
 
-## 23 Ejecutar el comando npm init y npm install
+## 22 Ejecutar el comando npm init y npm install
 
 ```
 npm init --yes
 npm install 
 ```
 
-## 24 Instalar express, mysql y body-parser
+## 23 Instalar express, mysql y body-parser
 
 ```
 npm install express --save
@@ -161,7 +156,7 @@ npm install mysql --save
 npm install body-parser --save
 ```
 
-## 25 Crear el archivo server.js con el siguiente contenido
+## 24 Crear el archivo server.js con el siguiente contenido
 
 ```
 var express = require('express');
