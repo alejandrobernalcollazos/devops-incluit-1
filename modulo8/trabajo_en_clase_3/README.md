@@ -156,7 +156,7 @@ OK
 - Leave other as default 
 
 
-Instalar SonarQube
+# Instalar SonarQube
 
 ## 27. Actualizar el Sistema Operativo
 
