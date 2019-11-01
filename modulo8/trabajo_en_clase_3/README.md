@@ -292,7 +292,19 @@ sudo systemctl status sonar
 sudo update-alternatives --config java
 ```
 
-## 40. Dentro de Jenkins instalar el plugin de Sonar Qube
+## 40. Asegurar la cantidad de sectores de memoria para la virtual memory
+
+```
+sysctl -w vm.max_map_count=262144
+```
+
+## 41. Reiniciar el servicio de sonar
+
+```
+service sonar restart
+```
+
+## 42. Dentro de Jenkins instalar el plugin de Sonar Qube
 
 
 Dentro de 
