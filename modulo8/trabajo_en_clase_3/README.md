@@ -201,6 +201,7 @@ psql
 ALTER USER sonar WITH ENCRYPTED password 'password';
 CREATE DATABASE sonar OWNER sonar;
 \q
+exit
 ```
 
 ## 33. Instalar SonarQube
