@@ -286,3 +286,21 @@ sudo systemctl enable sonar
 sudo systemctl status sonar
 ```
 
+## 39. Cambiar la version de java usando el siguiente comando
+
+```
+sudo update-alternatives --config java
+```
+
+## 40. Dentro de Jenkins instalar el plugin de Sonar Qube
+
+
+Dentro de 
+
+- Manage Jenkins
+- Manage plugins
+- Seleccionar la pestaña de "Plugins : Available"
+- Buscar: SonarQube Scanner
+
+Instalar y reiniciar
+
