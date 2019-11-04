@@ -11,6 +11,7 @@
 ## 3. Instalar dependencias de Docker
 
 ```
+apt update
 apt install apt-transport-https ca-certificates curl software-properties-common -y
 ```
 
@@ -47,9 +48,9 @@ systemctl status docker
 ## 9. Instalar Java
 
 ```
-sudo add-apt-repository ppa:openjdk-r/ppa
-sudo apt-get update
-sudo apt install -y openjdk-11-jdk
+add-apt-repository ppa:openjdk-r/ppa -y
+apt-get update -y
+apt install -y openjdk-11-jdk
 ```
 
 ## 10. Importar las llaves de GPG del repositorio de jenkins dentro del manejador de paquetes de ubuntu "apt"
@@ -96,16 +97,16 @@ usermod -aG docker jenkins
 systemctl restart jenkins
 ```
 
-## 17. Copiar el password que se genero en el archivo
-
-```
-cat /var/lib/jenkins/secrets/initialAdminPassword
-```
-
-## 18. Ingresar a la interfaz grafica e ingresar el password que se auto genero
+## 17. Ingresar a la interfaz grafica e ingresar el password que se auto genero
 
 ```
 Chrome: http://<mi ip>:8080
+```
+
+## 18. Copiar el password que se genero en el archivo e ingresarlo en la interfaz grafica
+
+```
+cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 ## 19. Seleccionar Install Suggested plugins
@@ -126,58 +127,73 @@ Suggested plugins
 
 Corroborar la url para Jenkins
 
-## 22. Crear un nuevo Item
+## 22. Reiniciar jenkins si la pantalla siguiente queda en blanco
+
+```
+systemctl restart jenkins
+```
+
+## 23. Hacer login en Jenkins luego del restart
+
+```
+Usar usuario y password generados en el paso 20
+```
+
+## 24. Crear un nuevo Item desde la interfaz de usuario
 
 Click en nuevo item desde la interfaz grafica
 
-## 23. Definir un nombre
+## 25. Definir un nombre
 
 ```
 FrontEnd Pipeline
 ```
 
-## 24. Seleccionar la opcion
+## 26. Seleccionar la opcion
 
 ```
 Multibranch Pipeline
 ```
 
-## 25. Dar OK
+## 27. Dar OK
 
 ```
 OK
 ```
 
-## 26. Configurar con los siguientes datos
+## 28. Configurar con los siguientes datos
 
-- Display name        : Frontend pipeline
-- Branch sources      : Github
-- Repository url      : https://github.com/alejandrobernalcollazos/abernal
-- Behaviours          : Discover branches
-- Build configuration : Jenkinsfile
+- Display name           : Frontend pipeline
+- Branch sources         : Github
+  - Add Credentials      : Jenkis
+  - Set github username  : <tu usuario de github>
+  - Set github password  : <tu password de github>
+  - Set credentials id   : <nombre aleatoria para identificar a la credencial en jenkins> 
+- Select credential      : Seleccionar credencial recién creada
+- Repository url         : https://github.com/alejandrobernalcollazos/abernal
+- Behaviours             : Discover branches
+  - Strategy             : All branches
+- Build configuration    : Jenkinsfile
+- Scan Multibranch Pipeline Triggers
+  - Periodically if not otherwise run : Habilitar el checkbox
+    - Interval                        : 1 min
 - Leave other as default 
 
 
 # Instalar SonarQube
 
-## 27. Actualizar el Sistema Operativo
+
+## 29. Instalar PostgreSQL
 
 ```
-sudo apt-get update -y
-sudo apt-get upgrade -y
-```
-
-## 28. Instalar PostgreSQL
-
-```
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
-sudo apt-get update -y
-sudo apt-get install postgresql postgresql-contrib
-sudo systemctl status postgresql
+apt-get update -y
+apt-get install postgresql postgresql-contrib -y
+systemctl status postgresql
 ```
 
-## 29. Configurar PostgreSQL
+## 30. Configurar PostgreSQL
 
 ```
 su - postgres
@@ -185,7 +201,7 @@ createuser sonar
 psql
 ```
 
-## 30. Configurar PostgreSQL dentro de la consola de psql
+## 31. Configurar PostgreSQL dentro de la consola de psql
 
 ```
 ALTER USER sonar WITH ENCRYPTED password 'password';
@@ -194,10 +210,10 @@ CREATE DATABASE sonar OWNER sonar;
 exit
 ```
 
-## 31. Crear el usuario sonar
+## 32. Crear el usuario sonar
 
 ```
-sudo adduser sonar
+adduser sonar
 ```
 
 ## 33. Instalar SonarQube
@@ -206,14 +222,14 @@ sudo adduser sonar
 apt install unzip
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.0.zip
 unzip sonarqube-8.0.zip
-sudo cp -r sonarqube-8.0 /opt/sonarqube
-sudo chown -R sonar:sonar /opt/sonarqube
+cp -r sonarqube-8.0 /opt/sonarqube
+chown -R sonar:sonar /opt/sonarqube
 ``` 
 
 ## 34. Modificar el archivo sonar.sh
 
 ```
-sudo nano /opt/sonarqube/bin/linux-x86-64/sonar.sh
+vim /opt/sonarqube/bin/linux-x86-64/sonar.sh
 ```
 
 Modificar la linea 
@@ -225,7 +241,7 @@ RUN_AS_USER=sonar
 ## 35. Modificar el archivo sonar.properties
 
 ```
-sudo nano /opt/sonarqube/conf/sonar.properties
+nano /opt/sonarqube/conf/sonar.properties
 ```
 
 Agregar las siguientes lineas al final del archivo
@@ -241,7 +257,7 @@ sonar.search.javaOpts=-Xms1024m  -Xmx1024m
 ## 36. Crear el archivo sonar.service
 
 ```
-sudo nano /etc/systemd/system/sonar.service
+nano /etc/systemd/system/sonar.service
 ```
 
 Agregar el siguiente contenido
@@ -271,29 +287,29 @@ WantedBy=multi-user.target
 ## 37. Iniciar el servicio de sonar y habilitarlo
 
 ```
-sudo systemctl start sonar
-sudo systemctl enable sonar
+systemctl start sonar
+systemctl enable sonar
 ```
 
 ## 38. Verificar el estado de sonarqube
 
 ```
-sudo systemctl status sonar
+systemctl status sonar
 ```
 
-## 40. Asegurar la cantidad de sectores de memoria para la virtual memory
+## 39. Asegurar la cantidad de sectores de memoria para la virtual memory
 
 ```
 sysctl -w vm.max_map_count=262144
 ```
 
-## 41. Reiniciar el servicio de sonar
+## 40. Reiniciar el servicio de sonar
 
 ```
 systemctl restart sonar
 ```
 
-## 42. Dentro de Jenkins instalar el plugin de Sonar Qube
+## 41. Dentro de Jenkins instalar el plugin de Sonar Qube
 
 
 Dentro de 
