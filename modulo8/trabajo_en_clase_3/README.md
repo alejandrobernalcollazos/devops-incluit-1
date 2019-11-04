@@ -328,8 +328,8 @@ Dentro de
   - username : admin
   - password : admin
 - Crear nuevo projecto
-  - project key : sonarqube_project
-  - display name: sonarqube_project
+  - project key : sonarqube
+  - display name: sonarqube
   - token name  : sonarqube_token
   - Generate
   - Salvar token
