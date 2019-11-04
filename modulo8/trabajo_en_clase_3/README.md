@@ -216,7 +216,13 @@ exit
 adduser sonar
 ```
 
-## 33. Instalar SonarQube
+## 33. Asegurar la cantidad de sectores de memoria para la virtual memory
+
+```
+sysctl -w vm.max_map_count=262144
+```
+
+## 34. Instalar SonarQube
 
 ```
 apt install unzip
@@ -226,7 +232,7 @@ cp -r sonarqube-8.0 /opt/sonarqube
 chown -R sonar:sonar /opt/sonarqube
 ``` 
 
-## 34. Modificar el archivo sonar.sh
+## 35. Modificar el archivo sonar.sh
 
 ```
 vim /opt/sonarqube/bin/linux-x86-64/sonar.sh
@@ -238,7 +244,7 @@ Modificar la linea
 RUN_AS_USER=sonar
 ```
 
-## 35. Modificar el archivo sonar.properties
+## 36. Modificar el archivo sonar.properties
 
 ```
 nano /opt/sonarqube/conf/sonar.properties
@@ -254,7 +260,7 @@ sonar.web.host=0.0.0.0
 sonar.search.javaOpts=-Xms1024m  -Xmx1024m
 ```
 
-## 36. Crear el archivo sonar.service
+## 37. Crear el archivo sonar.service
 
 ```
 nano /etc/systemd/system/sonar.service
@@ -284,40 +290,59 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
-## 37. Iniciar el servicio de sonar y habilitarlo
+## 38. Iniciar el servicio de sonar y habilitarlo
 
 ```
 systemctl start sonar
 systemctl enable sonar
 ```
 
-## 38. Verificar el estado de sonarqube
+## 39. Verificar el estado de sonarqube
 
 ```
 systemctl status sonar
 ```
 
-## 39. Asegurar la cantidad de sectores de memoria para la virtual memory
-
-```
-sysctl -w vm.max_map_count=262144
-```
-
-## 40. Reiniciar el servicio de sonar
-
-```
-systemctl restart sonar
-```
-
-## 41. Dentro de Jenkins instalar el plugin de Sonar Qube
+## 40. Dentro de Jenkins instalar el plugin de Sonar Qube
 
 
 Dentro de 
 
+- Click en el icono de Jenkins
 - Manage Jenkins
 - Manage plugins
 - Seleccionar la pestaña de "Plugins : Available"
 - Buscar: SonarQube Scanner
+- Instalar y reiniciar
 
-Instalar y reiniciar
+## 41. Login en Jenkins
+
+## 42. Configurar el servidor de SonarQube dentro de Jenkins
+
+- Click en el icono de Jenkins
+- Manage Jenkins
+- Configure System
+- SonarQube Servers
+  - Nombre : sonarqube_server
+  - Url    : http://localhost:9000
+- Click en Save
+
+## 43. Configurar las credenciales para el servidor de SonarQube en Jenkins
+
+- Click en el icono de Jenkins
+- Manage Jenkins
+- Configure System
+- SonarQube Servers
+  - Add : Jenkins
+    - Kind : Secret Text
+
+
+## 42. Dentro de Jenkins configurar la tool de Sonar Qube
+
+Dentro de 
+
+- Click en el icono de Jenkins
+- Manage Jenkins
+- Global Tool Configuration
+- 
 
