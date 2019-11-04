@@ -47,7 +47,9 @@ systemctl status docker
 ## 9. Instalar Java
 
 ```
-apt install openjdk-8-jdk -y
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt install -y openjdk-11-jdk
 ```
 
 ## 10. Importar las llaves de GPG del repositorio de jenkins dentro del manejador de paquetes de ubuntu "apt"
@@ -140,7 +142,7 @@ FrontEnd Pipeline
 Multibranch Pipeline
 ```
 
-## 25. Dar 
+## 25. Dar OK
 
 ```
 OK
@@ -148,10 +150,10 @@ OK
 
 ## 26. Configurar con los siguientes datos
 
-- Display name: Frontend pipeline
-- Branch sources : Github
-- Repository url : https://github.com/alejandrobernalcollazos/abernal
-- Behaviours     : Discover branches
+- Display name        : Frontend pipeline
+- Branch sources      : Github
+- Repository url      : https://github.com/alejandrobernalcollazos/abernal
+- Behaviours          : Discover branches
 - Build configuration : Jenkinsfile
 - Leave other as default 
 
@@ -165,19 +167,7 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 ```
 
-## 28. Instalar Java
-
-```
-sudo add-apt-repository ppa:openjdk-r/ppa && sudo apt-get update -q && sudo apt install -y openjdk-11-jdk
-```
-
-## 29. Verificar version de java
-
-```
-java -version
-```
-
-## 30. Instalar
+## 28. Instalar PostgreSQL
 
 ```
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
@@ -187,7 +177,7 @@ sudo apt-get install postgresql postgresql-contrib
 sudo systemctl status postgresql
 ```
 
-## 31. Configurar postgresql
+## 29. Configurar PostgreSQL
 
 ```
 su - postgres
@@ -195,7 +185,7 @@ createuser sonar
 psql
 ```
 
-## 32. Configurar postgresql dentro de la consola de psql
+## 30. Configurar PostgreSQL dentro de la consola de psql
 
 ```
 ALTER USER sonar WITH ENCRYPTED password 'password';
@@ -204,10 +194,15 @@ CREATE DATABASE sonar OWNER sonar;
 exit
 ```
 
-## 33. Instalar SonarQube
+## 31. Crear el usuario sonar
 
 ```
 sudo adduser sonar
+```
+
+## 33. Instalar SonarQube
+
+```
 apt install unzip
 wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.0.zip
 unzip sonarqube-8.0.zip
@@ -286,12 +281,6 @@ sudo systemctl enable sonar
 sudo systemctl status sonar
 ```
 
-## 39. Cambiar la version de java usando el siguiente comando
-
-```
-sudo update-alternatives --config java
-```
-
 ## 40. Asegurar la cantidad de sectores de memoria para la virtual memory
 
 ```
@@ -301,7 +290,7 @@ sysctl -w vm.max_map_count=262144
 ## 41. Reiniciar el servicio de sonar
 
 ```
-service sonar restart
+systemctl restart sonar
 ```
 
 ## 42. Dentro de Jenkins instalar el plugin de Sonar Qube
