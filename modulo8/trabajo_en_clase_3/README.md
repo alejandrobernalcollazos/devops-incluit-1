@@ -317,7 +317,22 @@ Dentro de
 
 ## 41. Login en Jenkins
 
-## 42. Configurar el servidor de SonarQube dentro de Jenkins
+## 42. Acceder al servidor de SonarQube y crear un projecto
+
+- Ir a la url http://<mi ip>:9000
+- Dar click en login
+- Login en sonarqube
+  - username : admin
+  - password : admin
+- Crear nuevo projecto
+  - project key : sonarqube_project
+  - display name: sonarqube_project
+  - token name  : sonarqube_token
+  - Generate
+  - Salvar token
+  - Continue
+
+## 43. Configurar el servidor de SonarQube dentro de Jenkins
 
 - Click en el icono de Jenkins
 - Manage Jenkins
@@ -327,22 +342,29 @@ Dentro de
   - Url    : http://localhost:9000
 - Click en Save
 
-## 43. Configurar las credenciales para el servidor de SonarQube en Jenkins
+## 44. Configurar las credenciales para el servidor de SonarQube en Jenkins
 
 - Click en el icono de Jenkins
 - Manage Jenkins
 - Configure System
 - SonarQube Servers
   - Add : Jenkins
-    - Kind : Secret Text
+    - Kind   : Secret Text
+    - Secret : <token que salvamos en el paso 42>
+    - ID     : sonarqube_token
+    - ADD
+  - Usar las credenciales recien creadas : sonarqube_token
 
-
-## 42. Dentro de Jenkins configurar la tool de Sonar Qube
+## 45. Dentro de Jenkins configurar la tool de Sonar Qube
 
 Dentro de 
 
 - Click en el icono de Jenkins
 - Manage Jenkins
 - Global Tool Configuration
-- 
+- SonarQube Scanner
+  - Add sonarqube scanner
+    - name : sonarqube_scanner
+    - install from maven central
+  - Save
 
